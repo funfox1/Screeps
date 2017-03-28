@@ -66,7 +66,7 @@ cityPopulation.run(Game.spawns['Spawn1']);
         if(creep.memory.role == 'builder') {
             roleBuilder.run(creep);
         }
-        if(creep.memory.role == 'bringer'||creep.memory.role == 'bringerTower'||creep.memory.role == 'bringerUpgrade'||creep.memory.role == 'bringer2') {
+        if(creep.memory.role == 'bringer'||creep.memory.role == 'bringerTower'||creep.memory.role == 'bringerUpgrade'||creep.memory.role == 'bringerUpgrade2'||creep.memory.role == 'bringer2') {
             roleBringer.run(creep);
         }
         if(creep.memory.role == 'claimer') {
