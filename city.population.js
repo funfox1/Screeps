@@ -10,6 +10,16 @@ var cityGestion = {
     run: function(mySpawn) {
 
 
+      //pour savoir le nombre de bringerUpgrade est ok
+          var bringerUpgrade = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringerUpgrade2');
+      //pour avoir toujours 1 bringerUpgrade
+          if(bringerUpgrade.length < 1) {
+              if(mySpawn.canCreateCreep(bringerbody, undefined) == OK) {
+                  var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringerUpgrade2', containerfocus: "58d23dca10a73b554190e058", bringerfocus: "58d4ac2d367b25080bd2d3a0" });
+                  console.log('Spawning new bringerUpgrade: ' + newName);
+              }
+          }
+
 
     //pour savoir le nombre de bringerTower est ok
         var bringerTower = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringerTower');
@@ -43,15 +53,7 @@ var cityGestion = {
                     console.log('Spawning new bringerUpgrade: ' + newName);
                 }
             }
-    //pour savoir le nombre de bringerUpgrade est ok
-        var bringerUpgrade = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringerUpgrade2');
-    //pour avoir toujours 1 bringerUpgrade
-        if(bringerUpgrade.length < 2) {
-            if(mySpawn.canCreateCreep(bringerbody, undefined) == OK) {
-                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringerUpgrade2', containerfocus: "58d23dca10a73b554190e058", bringerfocus: "58d4ac2d367b25080bd2d3a0" });
-                console.log('Spawning new bringerUpgrade: ' + newName);
-            }
-        }
+
 
 
     //pour savoir le nombre d'harvesters 1205
