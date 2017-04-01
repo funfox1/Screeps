@@ -34,15 +34,6 @@ var cityGestion = {
 
 
 
-    //pour savoir le nombre de bringer2 est ok
-        var bringer2 = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringer2');
-    //pour avoir toujours 1 bringer2
-        if(bringer2.length < 1) {
-            if(mySpawn.canCreateCreep(bringerbody, undefined) == OK) {
-                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringer2', containerfocus: "58d0ad205d70413b06afe814"});
-                console.log('Spawning new bringer2: ' + newName);
-            }
-        }
 
     //pour savoir le nombre de bringerUpgrade est ok
             var bringerUpgrade = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringerUpgrade');
@@ -56,15 +47,7 @@ var cityGestion = {
 
 
 
-    //pour savoir le nombre d'harvesters 1205
-        var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester_1205');
-    //pour avoir toujours 1 harvester qui fournissent le barril 1205
-        if(harvesters.length < 2) {
-            if(mySpawn.canCreateCreep(harvesterbody, undefined) == OK) {
-                var newName = mySpawn.createCreep(harvesterbody, undefined, {role: 'harvester_1205', containerfocus: "58d0ad205d70413b06afe814", harvestfocus: "5873be6b11e3e4361b4dad86" });
-                console.log('Spawning new big harvester 1205: ' + newName);
-            }
-        }
+
 
 
 
@@ -88,6 +71,28 @@ var cityGestion = {
                 console.log('Spawning new builder: ' + newName);
             }
         }
+
+        //pour savoir le nombre de bringer2 est ok
+            var bringer2 = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringer2');
+        //pour avoir toujours 1 bringer2
+            if(bringer2.length < 1) {
+                if(mySpawn.canCreateCreep(bringerbody, undefined) == OK) {
+                    var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringer2', containerfocus: "58d0ad205d70413b06afe814"});
+                    console.log('Spawning new bringer2: ' + newName);
+                }
+            }
+
+
+        //pour savoir le nombre d'harvesters 1205
+            var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester_1205');
+        //pour avoir toujours 1 harvester qui fournissent le barril 1205
+            if(harvesters.length < 2) {
+                if(mySpawn.canCreateCreep(harvesterbody, undefined) == OK) {
+                    var newName = mySpawn.createCreep(harvesterbody, undefined, {role: 'harvester_1205', containerfocus: "58d0ad205d70413b06afe814", harvestfocus: "5873be6b11e3e4361b4dad86" });
+                    console.log('Spawning new big harvester 1205: ' + newName);
+                }
+            }
+
 
         //pour savoir le nombre de bringer est ok
         var bringer = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringer');
