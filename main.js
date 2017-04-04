@@ -77,7 +77,7 @@ var linking = Game.getObjectById(linksid[0]).transferEnergy(Game.getObjectById(l
             roleBringer.run(creep);
         }
         if(creep.memory.role == 'claimer') {
-          //  roleClaimer.run(creep);
+            roleClaimer.run(creep);
         }
     }
 }
