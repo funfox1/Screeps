@@ -88,7 +88,7 @@ var cityGestion = {
         //pour avoir toujours 1 harvester qui fournissent le barril 1205
             if(harvesters.length < 2) {
                 if(mySpawn.canCreateCreep(harvesterbody, undefined) == OK) {
-                    var newName = mySpawn.createCreep(harvesterbody, undefined, {role: 'harvester_1205', containerfocus: "58d0ad205d70413b06afe814", harvestfocus: "5873be6b11e3e4361b4dad86" });
+                    var newName = mySpawn.createCreep(harvesterbody, undefined, {role: 'harvester_1205', containerfocus: "58e19f7d533e143470ca0972", harvestfocus: "5873be6b11e3e4361b4dad86" });
                     console.log('Spawning new big harvester 1205: ' + newName);
                 }
             }

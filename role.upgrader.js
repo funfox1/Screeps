@@ -32,7 +32,7 @@ var roleUpgrader = {
                     }
             }
             else {
-                var target = Game.getObjectById("58d4ac2d367b25080bd2d3a0");
+                var target = Game.getObjectById("58e196982af700452230915a");
                 if (target != null){
                         if(creep.withdraw(target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(target);

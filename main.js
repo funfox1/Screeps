@@ -6,7 +6,7 @@ var roleBuilder = require('role.builder');
 var roleBringer = require('role.bringer');
 var roleClaimer = require('role.claimer');
 var cityPopulation = require('city.population');
-
+var linksid = ["58e19f7d533e143470ca0972","58e196982af700452230915a"];
 
 
 module.exports.loop = function () {
@@ -53,6 +53,10 @@ cityPopulation.run(Game.spawns['Spawn1']);
             }
         }
     }
+
+/* Gestion des links */
+var linking = Game.getObjectById(linksid[0]).transferEnergy(Game.getObjectById(linksid[1]))
+
 
 /*gestion des creeps*/
     for(var name in Game.creeps) {
