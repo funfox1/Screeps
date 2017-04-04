@@ -33,7 +33,7 @@ var roleClaimer = {
         }
         else{*/
             if (creep.room.name != creep.memory.claimFocus){
-                creep.moveTo(funfoxClaim1);
+                creep.moveTo(Game.flags['funfoxClaim1']);
                 creep.say("going from "+creep.room.name+" to "+creep.memory.claimFocus);
             }
             else{
