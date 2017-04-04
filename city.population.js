@@ -10,13 +10,13 @@ var cityGestion = {
     run: function(mySpawn) {
 
 
-    //pour savoir le nombre de claimerLeft est ok
-        var claimerLeft = _.filter(Game.creeps, (creep) => creep.memory.role == 'claimerLeft');
-    //pour avoir toujours 1 bringerUpgrade
-        if(claimerLeft.length < 1) {
+    //pour savoir le nombre de claimer1 est ok
+        var claimer1 = _.filter(Game.creeps, (creep) => creep.memory.role == 'claimer');
+    //pour avoir toujours 1 claimer1
+        if(claimer1.length < 1) {
             if(mySpawn.canCreateCreep(claimerbody, undefined) == OK) {
-                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'claimerLeft', claimFocus: "E85N61"});
-                console.log('Spawning new claimerLeft: ' + newName);
+                var newName = mySpawn.createCreep(claimerbody, undefined, {role: 'claimer', claimFocus: "funfoxClaim1"});
+                console.log('Spawning new claimer1: ' + newName);
             }
         }
 
