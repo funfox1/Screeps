@@ -39,7 +39,7 @@ var roleBuilder = {
                         creep.memory.repair = null;
                     }
                     if (creep.memory.repair==null){
-                        closestDamagedStructure = creep.room.find(FIND_STRUCTURES, {filter: (structure) => (structure.hits < .5*structure.hitsMax && structure.structureType != STRUCTURE_WALL)});
+                        closestDamagedStructure = creep.room.find(FIND_STRUCTURES, {filter: (structure) => (structure.hits < .5*structure.hitsMax && structure.structureType != STRUCTURE_WALL && structure.structureType != STRUCTURE_RAMPART)});
 
 
 
