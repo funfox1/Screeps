@@ -1,9 +1,10 @@
 var builderbody = [WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE];
 var harvesterbody = [WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE];
 var harvesterbody2 = [WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE];
-var upgraderbody = [WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE];
+var upgraderbody = [WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE];
 var bringerbody = [CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE];
 var claimerbody = [CLAIM,CLAIM,MOVE,MOVE,MOVE];
+var utilitybody = [WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE];
 
 var cityGestion = {
     /** @param {city} creep **/

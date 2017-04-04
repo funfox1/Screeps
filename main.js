@@ -58,8 +58,10 @@ cityPopulation.run(Game.spawns['Spawn1']);
 
 
 /* Gestion des links */
-var linking = Game.getObjectById(linksid[0]).transferEnergy(Game.getObjectById(linksid[1]))
-
+var linking = Game.getObjectById(linksid[0])
+if (linking.cooldown == 0 && linking.energy>0){
+  linking.transferEnergy(Game.getObjectById(linksid[1]));
+}
 
 /*gestion des creeps*/
     for(var name in Game.creeps) {
