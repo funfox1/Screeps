@@ -1,4 +1,5 @@
-var towerid = "58d683143b35f85d07235430";
+var toweratk = "58d683143b35f85d07235430";
+var towerregen = "58df6201ccea5b7943b311ce";
 var containersid = ["584dc9dffe443f830afe165e","584ddc15eefac70220eed4d5"];
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
@@ -38,21 +39,23 @@ cityPopulation.run(Game.spawns['Spawn1']);
         console.log('Room "'+name+'" has '+Game.rooms[name].energyAvailable+' energy');
     }*/
 //gestion de la tourelle
-    var tower = Game.getObjectById(towerid);
+    var tower = Game.getObjectById(toweratk);
     if(tower) {
 /*attaque des hostiles*/
         var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         if(closestHostile) {
             tower.attack(closestHostile);
         }
-        else{
+    }
 /*heal des structures abimées*/
-            var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {filter: (structure) => (structure.hits < structure.hitsMax && structure.hits < 250000 )});
-            if(closestDamagedStructure) {
-                tower.repair(closestDamagedStructure);
-            }
+    var tower = Game.getObjectById(towerregen);
+    if(tower) {
+        var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {filter: (structure) => (structure.hits < structure.hitsMax && structure.hits < 250000 )});
+        if(closestDamagedStructure) {
+            tower.repair(closestDamagedStructure);
         }
     }
+
 
 /* Gestion des links */
 var linking = Game.getObjectById(linksid[0]).transferEnergy(Game.getObjectById(linksid[1]))

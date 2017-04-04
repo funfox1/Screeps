@@ -26,7 +26,7 @@ var cityGestion = {
     //pour avoir toujours 1 bringerTower
         if(bringerTower.length < 1) {
             if(mySpawn.canCreateCreep(bringerbody, undefined) == OK) {
-                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringerTower', containerfocus: "58d23dca10a73b554190e058", containerfocus2: "58df6201ccea5b7943b311ce", bringerfocus: "58d683143b35f85d07235430" });
+                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringerTower', containerfocus: "58e070f6e0ec505daaee3bf5", bringerfocus: "58d683143b35f85d07235430", bringerfocus2: "58df6201ccea5b7943b311ce" });
                 console.log('Spawning new bringerTower: ' + newName);
             }
         }
