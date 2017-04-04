@@ -54,7 +54,7 @@ var cityGestion = {
     //pour savoir le nombre d'upgrader
         var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     //pour avoir toujours 4 upgrader
-        if(upgraders.length < 2) {
+        if(upgraders.length < 4) {
             if(mySpawn.canCreateCreep(upgraderbody, undefined) == OK) {
                 var newName = mySpawn.createCreep(upgraderbody, undefined, {role: 'upgrader'});
                 console.log('Spawning new upgrader: ' + newName);
