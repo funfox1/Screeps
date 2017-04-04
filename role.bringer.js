@@ -8,7 +8,7 @@ var roleBringer = {
             creep.say('back to work');
 	    }
 	    if(!creep.memory.dying && creep.ticksToLive < 150 ) {
-	        if (creep.body.length>4){
+	        if (creep.body.length>4 && creep.hits==creep.hitsMax){
     	        creep.memory.dying = true;
 	            creep.say('regening');
 	        }
@@ -32,7 +32,7 @@ var roleBringer = {
 	            if (creep.memory.bringerfocus){
 	                 //&& Game.getObjectById(creep.memory.bringerfocus).energy<Game.getObjectById(creep.memory.bringerfocus.energyCapacity
 	                target = Game.getObjectById(creep.memory.bringerfocus);
-                  if (target.energy == target.energyCapacity) { 
+                  if (target.energy == target.energyCapacity) {
                     var targets = creep.room.find(FIND_STRUCTURES,
                       {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN) && structure.energy < structure.energyCapacity;} } );
                       if(targets.length > 0) {

@@ -7,7 +7,7 @@ var roleBuilder = {
             creep.memory.dying = false;
             creep.say('back to work');
 	    }
-	    if(!creep.memory.dying && creep.ticksToLive < 150 ) {
+	    if(!creep.memory.dying && creep.ticksToLive < 150 && creep.hits==creep.hitsMax) {
     	    creep.memory.dying = true;
 	        creep.say('regening');
 	    }

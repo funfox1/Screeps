@@ -7,7 +7,7 @@ var roleHarvester = {
             creep.memory.dying = false;
             creep.say('back to work');
 	    }
-	    if(!creep.memory.dying && creep.ticksToLive < 150 ) {
+	    if(!creep.memory.dying && creep.ticksToLive < 150 && creep.hits==creep.hitsMax) {
 	        if (creep.body.length>3){
     	        creep.memory.dying = true;
 	            creep.say('regening');
