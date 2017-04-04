@@ -10,6 +10,19 @@ var cityGestion = {
     run: function(mySpawn) {
 
 /*
+    //pour savoir le nombre de bringerUpgrade est ok
+        var claimerLeft = _.filter(Game.creeps, (creep) => creep.memory.role == 'claimerLeft');
+    //pour avoir toujours 1 bringerUpgrade
+        if(claimerLeft.length < 1) {
+            if(mySpawn.canCreateCreep(claimerbody, undefined) == OK) {
+                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'claimerLeft', claimFocus: "E85N61"});
+                console.log('Spawning new claimerLeft: ' + newName);
+            }
+        }
+*/
+
+
+/*
       //pour savoir le nombre de bringerUpgrade est ok
           var bringerUpgrade = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringerUpgrade2');
       //pour avoir toujours 1 bringerUpgrade

@@ -33,13 +33,13 @@ var roleClaimer = {
         }
         else{*/
             if (creep.room.name != creep.memory.claimFocus){
-              //  creep.moveTo(creep.pos.findClosestByPath(creep.room.findExitTo(creep.memory.claimFocus)));
-                creep.say(creep.room.name+" et "+creep.memory.claimFocus);
+                creep.moveTo(creep.pos.findClosestByPath(creep.room.findExitTo(creep.memory.claimFocus)));
+                creep.say("going from "+creep.room.name+" to "+creep.memory.claimFocus);
             }
             else{
-            //    if(creep.reserveController(creep.memory.claimFocus)== ERR_NOT_IN_RANGE){
-          //          creep.moveTo(creep.memory.claimFocus);
-           //     }
+                if(creep.reserveController(creep.memory.claimFocus)== ERR_NOT_IN_RANGE){
+                    creep.moveTo(creep.memory.claimFocus);
+                }
             }
         }
     /*}*/
