@@ -1,7 +1,7 @@
 var builderbody = [WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE];
 var harvesterbody = [WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE];
 var harvesterbody2 = [WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE];
-var upgraderbody = [WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE];
+var upgraderbody = [WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE];
 var bringerbody = [CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE];
 var claimerbody = [CLAIM,MOVE];
 
@@ -67,7 +67,7 @@ var cityGestion = {
     //pour savoir le nombre d'upgrader
         var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     //pour avoir toujours 4 upgrader
-        if(upgraders.length < 4) {
+        if(upgraders.length < 3) {
             if(mySpawn.canCreateCreep(upgraderbody, undefined) == OK) {
                 var newName = mySpawn.createCreep(upgraderbody, undefined, {role: 'upgrader'});
                 console.log('Spawning new upgrader: ' + newName);
