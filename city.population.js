@@ -9,8 +9,8 @@ var cityGestion = {
     /** @param {city} creep **/
     run: function(mySpawn) {
 
-/*
-    //pour savoir le nombre de bringerUpgrade est ok
+
+    //pour savoir le nombre de claimerLeft est ok
         var claimerLeft = _.filter(Game.creeps, (creep) => creep.memory.role == 'claimerLeft');
     //pour avoir toujours 1 bringerUpgrade
         if(claimerLeft.length < 1) {
@@ -19,7 +19,7 @@ var cityGestion = {
                 console.log('Spawning new claimerLeft: ' + newName);
             }
         }
-*/
+
 
 
 /*
