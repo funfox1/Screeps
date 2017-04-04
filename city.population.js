@@ -9,7 +9,7 @@ var cityGestion = {
     /** @param {city} creep **/
     run: function(mySpawn) {
 
-
+/*
       //pour savoir le nombre de bringerUpgrade est ok
           var bringerUpgrade = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringerUpgrade2');
       //pour avoir toujours 1 bringerUpgrade
@@ -19,14 +19,14 @@ var cityGestion = {
                   console.log('Spawning new bringerUpgrade: ' + newName);
               }
           }
-
+*/
 
     //pour savoir le nombre de bringerTower est ok
         var bringerTower = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringerTower');
     //pour avoir toujours 1 bringerTower
         if(bringerTower.length < 1) {
             if(mySpawn.canCreateCreep(bringerbody, undefined) == OK) {
-                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringerTower', containerfocus: "58d23dca10a73b554190e058", bringerfocus: "58d683143b35f85d07235430" });
+                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringerTower', containerfocus: "58d23dca10a73b554190e058", containerfocus2: "58df6201ccea5b7943b311ce", bringerfocus: "58d683143b35f85d07235430" });
                 console.log('Spawning new bringerTower: ' + newName);
             }
         }
@@ -34,7 +34,7 @@ var cityGestion = {
 
 
 
-
+/*
     //pour savoir le nombre de bringerUpgrade est ok
             var bringerUpgrade = _.filter(Game.creeps, (creep) => creep.memory.role == 'bringerUpgrade');
     //pour avoir toujours 1 bringerUpgrade
@@ -45,7 +45,7 @@ var cityGestion = {
                 }
             }
 
-
+*/
 
 
 
@@ -77,7 +77,7 @@ var cityGestion = {
         //pour avoir toujours 1 bringer2
             if(bringer2.length < 1) {
                 if(mySpawn.canCreateCreep(bringerbody, undefined) == OK) {
-                    var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringer2', containerfocus: "58d0ad205d70413b06afe814"});
+                    var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringer2', containerfocus: "58e19f7d533e143470ca0972"});
                     console.log('Spawning new bringer2: ' + newName);
                 }
             }
@@ -99,13 +99,13 @@ var cityGestion = {
     //pour avoir toujours 1 bringer
         if(bringer.length < 1 || (bringer.length == 1 && bringer[0].body.length<5) ) {
             if(mySpawn.canCreateCreep(bringerbody, undefined) == OK) {
-                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringer', containerfocus: "58d23dca10a73b554190e058" });
+                var newName = mySpawn.createCreep(bringerbody, undefined, {role: 'bringer', containerfocus: "58e070f6e0ec505daaee3bf5" });
                 console.log('Spawning new big bringer: ' + newName);
             }
             else{
                 if (bringer.length < 1){
                     if(mySpawn.canCreateCreep([CARRY,CARRY,CARRY,MOVE], undefined) == OK) {
-                    var newName = mySpawn.createCreep([CARRY,CARRY,CARRY,MOVE], undefined, {role: 'bringer', containerfocus: "58d23dca10a73b554190e058" });
+                    var newName = mySpawn.createCreep([CARRY,CARRY,CARRY,MOVE], undefined, {role: 'bringer', containerfocus: "58e070f6e0ec505daaee3bf5" });
                         console.log('Spawning new small bringer: ' + newName);
                     }
                 }
@@ -117,12 +117,12 @@ var cityGestion = {
     //pour avoir toujours 2 harvesters qui fournissent le barril 4212
         if(harvesters.length < 2) {
             if(mySpawn.canCreateCreep([WORK,CARRY,MOVE], undefined) == OK && harvesters.length < 1) {
-                var newName = mySpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester_4212', containerfocus: "58d23dca10a73b554190e058", harvestfocus: "5873be6b11e3e4361b4dad85" });
+                var newName = mySpawn.createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester_4212', containerfocus: "58e070f6e0ec505daaee3bf5", harvestfocus: "5873be6b11e3e4361b4dad85" });
                 console.log('Spawning new little harvester 4212: ' + newName);
             }
             else{
                 if(mySpawn.canCreateCreep(harvesterbody, undefined) == OK) {
-                    var newName = mySpawn.createCreep(harvesterbody, undefined, {role: 'harvester_4212', containerfocus: "58d23dca10a73b554190e058", harvestfocus: "5873be6b11e3e4361b4dad85" });
+                    var newName = mySpawn.createCreep(harvesterbody, undefined, {role: 'harvester_4212', containerfocus: "58e070f6e0ec505daaee3bf5", harvestfocus: "5873be6b11e3e4361b4dad85" });
                     console.log('Spawning new big harvester 4212: ' + newName);
                 }
             }

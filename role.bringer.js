@@ -33,6 +33,11 @@ var roleBringer = {
 	                 //&& Game.getObjectById(creep.memory.bringerfocus).energy<Game.getObjectById(creep.memory.bringerfocus.energyCapacity
 	                target = Game.getObjectById(creep.memory.bringerfocus);
                   if (target.energy == target.energyCapacity) {
+                    if (creep.memory.bringerfocus2!=null){
+                    target = Game.getObjectById(creep.memory.bringerfocus2);
+                    }
+                  }
+                  if (target.energy == target.energyCapacity) {
                     var targets = creep.room.find(FIND_STRUCTURES,
                       {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN) && structure.energy < structure.energyCapacity;} } );
                       if(targets.length > 0) {
