@@ -1,6 +1,6 @@
 var builderbody = [WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE];
 var harvesterbody = [WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE];
-var harvesterbody2 = [WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE];
+var harvesterbody2 = [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE];
 var upgraderbody = [WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE];
 var bringerbody = [CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE];
 var claimerbody = [CLAIM,CLAIM,MOVE,MOVE,MOVE];
@@ -9,6 +9,16 @@ var utilitybody = [WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE];
 var cityGestion = {
     /** @param {city} creep **/
     run: function(mySpawn) {
+
+      //pour savoir le nombre d'harvesters 1205
+          var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester_flag1');
+      //pour avoir toujours 1 harvester qui fournissent le barril 1205
+          if(harvesters.length < 1) {
+              if(mySpawn.canCreateCreep(harvesterbody2, undefined) == OK) {
+                  var newName = mySpawn.createCreep(harvesterbody2, undefined, {role: 'harvester_flag1', containerfocus: "58e070f6e0ec505daaee3bf5", harvestfocus: "5873be5111e3e4361b4daa54" });
+                  console.log('Spawning new big harvester flag1: ' + newName);
+              }
+          }
 
 
     //pour savoir le nombre de claimer1 est ok
