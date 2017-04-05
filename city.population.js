@@ -11,6 +11,18 @@ var cityGestion = {
     run: function(mySpawn) {
 
 
+      //pour savoir le nombre de claimer1 est ok
+          var claimer1 = _.filter(Game.creeps, (creep) => creep.memory.role == 'claimer');
+      //pour avoir toujours 1 claimer1
+          if(claimer1.length < 1) {
+              if(mySpawn.canCreateCreep(claimerbody, undefined) == OK) {
+                  var newName = mySpawn.createCreep(claimerbody, undefined, {role: 'claimer', claimFocus: "funfoxClaim1"});
+                  console.log('Spawning new claimer1: ' + newName);
+              }
+          }
+
+
+
       //pour savoir le nombre d'harvesters 1205
           var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester_flag2');
       //pour avoir toujours 1 harvester qui squattent le flag2
@@ -31,16 +43,6 @@ var cityGestion = {
               }
           }
 
-
-    //pour savoir le nombre de claimer1 est ok
-        var claimer1 = _.filter(Game.creeps, (creep) => creep.memory.role == 'claimer');
-    //pour avoir toujours 1 claimer1
-        if(claimer1.length < 1) {
-            if(mySpawn.canCreateCreep(claimerbody, undefined) == OK) {
-                var newName = mySpawn.createCreep(claimerbody, undefined, {role: 'claimer', claimFocus: "funfoxClaim1"});
-                console.log('Spawning new claimer1: ' + newName);
-            }
-        }
 
 
 
