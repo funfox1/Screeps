@@ -66,7 +66,7 @@ if (linking.cooldown == 0 && linking.energy>0){
 /*gestion des creeps*/
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
-        if(creep.memory.role == 'harvester_4212'||creep.memory.role == 'harvester_1205') {
+        if(creep.memory.role == 'harvester_4212'||creep.memory.role == 'harvester_1205'||creep.memory.role == 'harvester_flag1') {
             roleHarvester.run(creep);
         }
         if(creep.memory.role == 'upgrader') {
