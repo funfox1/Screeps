@@ -10,9 +10,20 @@ var cityGestion = {
     /** @param {city} creep **/
     run: function(mySpawn) {
 
+
+      //pour savoir le nombre d'harvesters 1205
+          var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester_flag2');
+      //pour avoir toujours 1 harvester qui squattent le flag2
+          if(harvesters.length < 1) {
+              if(mySpawn.canCreateCreep(harvesterbody2, undefined) == OK) {
+                  var newName = mySpawn.createCreep(harvesterbody2, undefined, {role: 'harvester_flag2', containerfocus: "58e070f6e0ec505daaee3bf5", harvestfocus: "5873be5111e3e4361b4daa53" });
+                  console.log('Spawning new big harvester flag2: ' + newName);
+              }
+          }
+
       //pour savoir le nombre d'harvesters 1205
           var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester_flag1');
-      //pour avoir toujours 1 harvester qui fournissent le barril 1205
+      //pour avoir toujours 1 harvester qui squattent le flag1
           if(harvesters.length < 1) {
               if(mySpawn.canCreateCreep(harvesterbody2, undefined) == OK) {
                   var newName = mySpawn.createCreep(harvesterbody2, undefined, {role: 'harvester_flag1', containerfocus: "58e070f6e0ec505daaee3bf5", harvestfocus: "5873be5111e3e4361b4daa54" });
