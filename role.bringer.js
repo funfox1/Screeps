@@ -38,7 +38,7 @@ var roleBringer = {
                     }
                   }
                   if (target.energy == target.energyCapacity) {
-                    var targets = creep.room.find(FIND_STRUCTURES,
+                    var targets = creep.pos.findClosestByRange(FIND_STRUCTURES,
                       {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN) && structure.energy < structure.energyCapacity;} } );
                       if(targets.length > 0) {
                         target=targets[0];
@@ -51,7 +51,7 @@ var roleBringer = {
 	            }
 	            else
 	            {
-    	            var targets = creep.room.find(FIND_STRUCTURES,
+    	            var targets = creep.pos.findClosestByRange(FIND_STRUCTURES,
                     {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN) && structure.energy < structure.energyCapacity;} } );
                     if(targets.length > 0) {
                         if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
