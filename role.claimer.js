@@ -10,9 +10,28 @@ var roleClaimer = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
-      if(creep.reserveController(creep.room.controller)== ERR_NOT_IN_RANGE){
-                    creep.moveTo(Game.flags[creep.memory.claimFocus]);
+
+      if(creep.memory.dying && creep.ticksToLive > (CREEP_LIFE_TIME-100)) {
+          creep.memory.dying = false;
+          creep.say('back to work');
+    }
+    if(!creep.memory.dying && creep.ticksToLive < 150 ) {
+        if (creep.body.length>4 && creep.hits==creep.hitsMax){
+            creep.memory.dying = true;
+            creep.say('regening');
+        }
+    }
+
+
+      if(creep.memory.dying) {
+          creep.moveTo(Game.spawns['Spawn1']);
+      }
+      else{
+
+        if(creep.reserveController(creep.room.controller)== ERR_NOT_IN_RANGE){
+          creep.moveTo(Game.flags[creep.memory.claimFocus]);
         }
       }
+    }
 };
 module.exports = roleClaimer;
